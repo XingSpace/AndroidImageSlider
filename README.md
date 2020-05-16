@@ -2,6 +2,24 @@
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/daimajia/AndroidImageSlider?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
  
+
+我给它加上了轮播视频的功能（VideoSliderView），通过这个类可以实现图片和视频的混合播放
+使用方法也很简单：
+
+```java
+VideoSliderView videoSliderView = new VideoSliderView(this);
+videoSliderView.video("android.resource://" + getPackageName() + "/" + R.raw.testvideo)
+                .setScaleType(BaseSliderView.ScaleType.Fit);
+sliderLayout.addSlider(videoSliderView);
+```
+
+目前它还没法根据视频的长度来调整每个Item的播放时间，接下来我会把它给补上的。
+还有就是视频切换时，会有短暂的黑屏或白屏（因为这个时候视频资源还没有加载出来，这些问题我日后都慢慢更新上去
+
+我的Email -> xingspace@icloud.com
+
+--------------------- 以下是fork之前的 ----------------------
+
 This is an amazing image slider for the Android platform. I decided to open source this because there is really not an attractive, convenient slider widget in Android.
  
 You can easily load images from an internet URL, drawable, or file. And there are many kinds of amazing animations you can choose. :-D

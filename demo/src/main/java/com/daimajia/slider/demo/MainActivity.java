@@ -19,6 +19,7 @@ import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
+import com.daimajia.slider.library.SliderTypes.VideoSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 
 import java.util.HashMap;
@@ -39,6 +40,12 @@ public class MainActivity extends ActionBarActivity implements BaseSliderView.On
         url_maps.put("Big Bang Theory", "http://tvfiles.alphacoders.com/100/hdclearart-10.png");
         url_maps.put("House of Cards", "http://cdn3.nflximg.net/images/3093/2043093.jpg");
         url_maps.put("Game of Thrones", "http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
+
+        VideoSliderView videoSliderView = new VideoSliderView(this);
+        videoSliderView.video("android.resource://" + getPackageName() + "/" + R.raw.testvideo)
+                .setScaleType(BaseSliderView.ScaleType.Fit);
+
+        mDemoSlider.addSlider(videoSliderView);
 
         HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
         file_maps.put("Hannibal",R.drawable.hannibal);
